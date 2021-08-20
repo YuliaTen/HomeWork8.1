@@ -17,8 +17,7 @@ public class Baggage {
 
     @Override
     public String toString() {
-        return  "carrier='" + carrier + '\'' +
-                ", classCarrier='" + classCarrier + '\'' +
-                ", maxWeight=" + maxWeight + "\n";
+        return
+          String.format("Перевозчик: %s, Класс перевозки: %s, Максимальный вес багажа: %d \n",carrier,classCarrier,maxWeight);
     }
 }

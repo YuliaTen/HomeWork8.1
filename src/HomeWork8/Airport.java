@@ -1,6 +1,7 @@
 package HomeWork8;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Airport {
@@ -16,12 +17,22 @@ public class Airport {
         baggages.add(new Baggage("S7","комфорт",50));
         baggages.add(new Baggage("Aeroflot","эконом",10));
 
-        ComparatorWeigth cw = new ComparatorWeigth();
+        System.out.println("Сортировка максимальному весу");
+        Comparator<Baggage> cw = (o1, o2) -> o1.maxWeight-o2.maxWeight;
         baggages.sort(cw);
-
         System.out.println(baggages);
 
-
+        System.out.println("\n Сортировка по длине Компании и класса");
+        Comparator<Baggage> comparatorDlStr = new Comparator<Baggage>(){
+            @Override
+            public int compare(Baggage o1, Baggage o2) {
+                String str1 = o1.carrier+" "+o1.classCarrier;
+                String str2 = o2.carrier+" "+o2.classCarrier;
+                return str1.length()-str2.length();
+            }
+        };
+        baggages.sort(comparatorDlStr);
+        System.out.println(baggages);
 
     }
 }
