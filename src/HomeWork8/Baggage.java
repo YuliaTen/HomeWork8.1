@@ -11,12 +11,14 @@ public class Baggage {
         this.maxWeight = maxWeight;
     }
 
+    public void doSomthing(){
+        System.out.println("do it");
+    }
+
     @Override
     public String toString() {
-        return "Baggage{" +
-                "carrier='" + carrier + '\'' +
+        return  "carrier='" + carrier + '\'' +
                 ", classCarrier='" + classCarrier + '\'' +
-                ", maxWeight=" + maxWeight +
-                '}';
+                ", maxWeight=" + maxWeight + "\n";
     }
 }
